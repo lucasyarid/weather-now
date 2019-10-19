@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheHeader Componente não alterado 1`] = `"<div class=\\"TheHeader\\"><baselogo-stub variation=\\"default\\" class=\\"TheHeader__logo\\"></baselogo-stub></div>"`;
