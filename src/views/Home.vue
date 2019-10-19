@@ -1,9 +1,15 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <BaseTemperature :temperature="-4" />
+  </div>
 </template>
 
 <script>
+import { BaseTemperature } from "@/components/atoms";
 export default {
-  name: "home"
+  name: "home",
+  components: {
+    BaseTemperature
+  }
 };
 </script>
