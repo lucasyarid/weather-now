@@ -1,6 +1,8 @@
 <template>
   <div class="TheHeader">
-    <BaseLogo class="TheHeader__logo" />
+    <div class="TheHeader__logo">
+      <BaseLogo />
+    </div>
   </div>
 </template>
 
@@ -27,7 +29,7 @@ export default {
   background-color: white;
   box-shadow: 0px 0px 5px 0px $color-box-shadow;
   &__logo {
-    width: 125px;
+    width: 150px;
   }
 }
 </style>

@@ -26,5 +26,8 @@ export default {
   margin: 0;
   width: 100%;
   height: fit-content;
+  &__img {
+    width: 100%;
+  }
 }
 </style>
