@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasePressure Componente não alterado 1`] = `
+"<div class=\\"BasePressure\\"><div class=\\"BasePressure__title\\">
+    Pressure
+  </div> <div class=\\"BasePressure__value\\">
+    892<span class=\\"BasePressure__scale\\">hPa</span></div></div>"
+`;
