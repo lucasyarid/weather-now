@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseHumidity Componente não alterado 1`] = `
+"<div class=\\"BaseHumidity\\"><div class=\\"BaseHumidity__title\\">
+    Humidity
+  </div> <div class=\\"BaseHumidity__value\\">
+    70<span class=\\"BaseHumidity__scale\\">%</span></div></div>"
+`;
