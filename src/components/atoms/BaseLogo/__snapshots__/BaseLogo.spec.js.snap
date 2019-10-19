@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseLogo Componente não alterado 1`] = `"<figure class=\\"BaseLogo\\"><img src=\\"default.svg\\" alt=\\"WEATHERNOW Logo\\" class=\\"BaseLogo__img\\"></figure>"`;
