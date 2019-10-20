@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TemperatureCard Componente não alterado 1`] = `"<div class=\\"TemperatureCard\\"><basecard-stub title=\\"loading...\\" bottomtext=\\"Updated at \\"><basetemperature-stub temperature=\\"0\\" scale=\\"Celsius\\"></basetemperature-stub> <!----></basecard-stub></div>"`;

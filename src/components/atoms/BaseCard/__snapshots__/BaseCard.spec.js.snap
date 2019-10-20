@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseCard Componente não alterado 1`] = `"<div class=\\"BaseCard\\"><!----> <div class=\\"BaseCard__content\\"></div> <div class=\\"BaseCard__footer\\"> <div class=\\"BaseCard__bottom-text\\"></div></div></div>"`;
