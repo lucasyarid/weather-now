@@ -57,7 +57,9 @@ export default {
   computed: {
     ...mapGetters({
       weatherCitiesInfo: "weather/weatherCitiesInfo",
-      updatedTime: "weather/updatedTime"
+      updatedTime: "weather/updatedTime",
+      isLoading: "weather/isLoading",
+      hasError: "weather/hasError"
     })
   },
   methods: {

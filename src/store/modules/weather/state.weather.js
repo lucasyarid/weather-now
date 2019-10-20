@@ -1,4 +1,6 @@
 export default {
   weatherList: [],
-  updatedTime: null
+  updatedTime: null,
+  error: false,
+  loading: false
 };

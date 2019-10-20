@@ -1,7 +1,8 @@
 const weatherAPI = `${process.env.VUE_APP_WEATHER_URL}/group?APPID=${process.env.VUE_APP_WEATHER_KEY}&units=metric&`;
 
 export default {
-  citiesWeather({ dispatch }, cities) {
+  citiesWeather({ commit, dispatch }, cities) {
+    commit("SET_LOADING", true);
     if (localStorage.getItem("weather")) {
       const cacheMilliseconds = 600000;
       const cachedUpdatedAt = new Date(localStorage.getItem("updated_at"));
@@ -18,8 +19,9 @@ export default {
       dispatch("fetchCitiesWeather", cities);
     }
   },
-  async fetchCitiesWeather({ dispatch }, citiesIds) {
+  async fetchCitiesWeather({ commit, dispatch }, citiesIds) {
     const response = await fetch(`${weatherAPI}id=${citiesIds}`);
+    if (!response.ok) return commit("SET_ERROR", true);
     const result = await response.json();
 
     dispatch("setWeather", result.list);
@@ -28,6 +30,7 @@ export default {
     commit("SET_WEATHER", weatherList);
     dispatch("cacheWeather", weatherList);
     dispatch("setUpdateTime");
+    commit("SET_LOADING", false);
   },
   setUpdateTime({ commit }) {
     const date = new Date();

@@ -13,5 +13,11 @@ export default {
   },
   updatedTime(state) {
     return state.updatedTime;
+  },
+  isLoading(state) {
+    return state.loading;
+  },
+  hasError(state) {
+    return state.error;
   }
 };
