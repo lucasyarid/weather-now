@@ -1,3 +1,3 @@
-import Card from "./Card/Card";
+import TemperatureCard from "./TemperatureCard/TemperatureCard";
 
-export { Card };
+export { TemperatureCard };

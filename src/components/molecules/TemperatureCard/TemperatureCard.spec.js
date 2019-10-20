@@ -1,8 +1,8 @@
 import { shallowMount } from "@vue/test-utils";
-import Card from "./Card";
+import TemperatureCard from "./TemperatureCard";
 
-describe("Card", () => {
-  const WRAPPER = shallowMount(Card);
+describe("TemperatureCard", () => {
+  const WRAPPER = shallowMount(TemperatureCard);
 
   test("Componente existe", () => {
     expect(WRAPPER.exists()).toBe(true);

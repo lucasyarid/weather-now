@@ -1,21 +1,21 @@
 <template>
-  <div class="Card">
-    <div v-if="title" class="Card__title">
+  <div class="BaseCard">
+    <div v-if="title" class="BaseCard__title">
       {{ title }}
     </div>
-    <div class="Card__content">
+    <div class="BaseCard__content">
       <slot />
     </div>
-    <div class="Card__footer">
+    <div class="BaseCard__footer">
       <slot name="footer" />
-      <div class="Card__bottom-text">{{ bottomText }}</div>
+      <div class="BaseCard__bottom-text">{{ bottomText }}</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Card",
+  name: "BaseCard",
   props: {
     title: {
       type: String,
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.Card {
+.BaseCard {
   box-shadow: 0px 0px 5px 0px $color-box-shadow;
   margin: 40px;
   background-color: white;

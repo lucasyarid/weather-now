@@ -1,45 +1,31 @@
 <template>
   <div class="Home">
     <div class="Home__cards-row">
-      <Card
+      <TemperatureCard
         v-for="(city, i) in weatherCitiesInfo"
         :key="city.id"
         :title="`${city.name}, ${city.country}`"
-        :bottomText="`Updated at ${updatedTime}`"
-      >
-        <BaseLoading v-if="isLoading" />
-        <template v-else>
-          <BaseTemperature :temperature="city.temp" />
-          <template v-if="i === 1" slot="footer">
-            <div class="Home__cards-footer">
-              <BaseHumidity :humidity="city.humidity" />
-              <BasePressure :pressure="city.pressure" />
-            </div>
-          </template>
-        </template>
-      </Card>
+        :temperature="city.temp"
+        :humidity="city.humidity"
+        :pressure="city.pressure"
+        :updatedAt="updatedTime"
+        :isExpanded="i === 1"
+        :is-loading="isLoading"
+        :has-error="hasError"
+        @tryAgain="getCitiesWeather"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import {
-  BaseTemperature,
-  BasePressure,
-  BaseHumidity,
-  BaseLoading
-} from "@/components/atoms";
-import { Card } from "@/components/molecules";
+import { TemperatureCard } from "@/components/molecules";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Home",
   components: {
-    BaseTemperature,
-    BasePressure,
-    BaseHumidity,
-    BaseLoading,
-    Card
+    TemperatureCard
   },
   data() {
     return {
@@ -70,11 +56,14 @@ export default {
   methods: {
     ...mapActions({
       citiesWeather: "weather/citiesWeather"
-    })
+    }),
+    getCitiesWeather() {
+      const citiesIds = this.cities.map(city => city.id).join(",");
+      this.citiesWeather(citiesIds);
+    }
   },
   mounted() {
-    const citiesIds = this.cities.map(city => city.id).join(",");
-    this.citiesWeather(citiesIds);
+    this.getCitiesWeather();
   }
 };
 </script>
@@ -91,11 +80,8 @@ export default {
     @media (min-width: 760px) {
       display: flex;
       align-items: center;
+      margin: 0 auto;
     }
-  }
-  &__cards-footer {
-    display: flex;
-    justify-content: space-around;
   }
 }
 </style>
