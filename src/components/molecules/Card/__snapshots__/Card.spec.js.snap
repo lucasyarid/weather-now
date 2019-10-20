@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Componente não alterado 1`] = `"<div class=\\"Card\\"><!----> <div class=\\"Card__content\\"></div> <div class=\\"Card__footer\\"> <div class=\\"Card__bottom-text\\"></div></div></div>"`;
