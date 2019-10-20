@@ -32,8 +32,10 @@ export default {
 
 <style lang="scss" scoped>
 .BaseTemperature {
-  font-size: 96px;
+  font-size: 76px;
   display: flex;
+  width: fit-content;
+  margin: 0 auto;
 
   &--blue {
     color: $color-blue;

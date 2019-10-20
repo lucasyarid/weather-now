@@ -32,12 +32,16 @@ export default {
 <style lang="scss" scoped>
 .Card {
   box-shadow: 0px 0px 5px 0px $color-box-shadow;
-  margin: 20px;
+  margin: 40px;
   background-color: white;
   border-radius: 5px;
-  @media (min-width: 768px) {
-    max-width: 300px;
+  height: fit-content;
+
+  @media (min-width: 760px) {
+    margin: 20px;
+    min-width: 300px;
   }
+
   &__title,
   &__content,
   &__footer {
