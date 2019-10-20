@@ -13,6 +13,11 @@ VUE_APP_WEATHER_URL="http://api.openweathermap.org/data/2.5/"
 VUE_APP_WEATHER_KEY="{API_KEY}"
 ```
 
+Inicie o Serviço
+```
+yarn serve
+```
+
 ### Para rodar os testes do Jest
 ```
 yarn test
