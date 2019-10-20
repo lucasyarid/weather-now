@@ -70,6 +70,7 @@ export default {
 
 <style lang="scss" scoped>
 .Home {
+  width: 100%;
   @media (min-width: 760px) {
     display: flex;
     align-items: center;
@@ -77,8 +78,10 @@ export default {
   }
 
   &__cards-row {
+    display: flex;
+    flex-direction: column;
     @media (min-width: 760px) {
-      display: flex;
+      flex-direction: row;
       align-items: center;
       margin: 0 auto;
     }

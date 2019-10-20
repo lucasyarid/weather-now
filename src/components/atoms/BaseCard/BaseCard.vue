@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .BaseCard {
   box-shadow: 0px 0px 5px 0px $color-box-shadow;
-  margin: 40px;
+  margin: 20px 40px;
   background-color: white;
   border-radius: 5px;
   height: fit-content;

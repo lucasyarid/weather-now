@@ -1,5 +1,5 @@
 <template>
-  <div class="TemperatureCard">
+  <div class="TemperatureCard" :class="temperatureCardClasses">
     <BaseCard :title="title" :bottomText="`Updated at ${updatedAt}`">
       <BaseLoading v-if="isLoading" />
       <div v-else-if="hasError" class="TemperatureCard__error">
@@ -72,12 +72,22 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  computed: {
+    temperatureCardClasses() {
+      return { "TemperatureCard--expanded": this.isExpanded };
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .TemperatureCard {
+  &--expanded {
+    @media (max-width: 760px) {
+      order: -1;
+    }
+  }
   &__error {
     color: $color-red;
   }
