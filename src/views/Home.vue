@@ -1,20 +1,19 @@
 <template>
   <div class="Home">
     <div class="Home__cards-row">
-      <Card title="Nuuk, GL" bottomText="Updated at 02:48:27 PM">
-        <BaseTemperature :temperature="-4" />
-      </Card>
-      <Card title="Urubici, BR" bottomText="Updated at 02:48:27 PM">
-        <BaseTemperature :temperature="19" />
-        <template slot="footer">
+      <Card
+        v-for="(city, i) in weatherCitiesInfo"
+        :key="city.id"
+        :title="`${city.name}, ${city.country}`"
+        bottomText="Updated at 02:48:27 PM"
+      >
+        <BaseTemperature :temperature="city.temp" />
+        <template v-if="i === 1" slot="footer">
           <div class="Home__cards-footer">
-            <BaseHumidity :humidity="75" />
-            <BasePressure :pressure="892" />
+            <BaseHumidity :humidity="city.humidity" />
+            <BasePressure :pressure="city.pressure" />
           </div>
         </template>
-      </Card>
-      <Card title="Nairobi, KE" bottomText="Updated at 02:48:27 PM">
-        <BaseTemperature :temperature="31" />
       </Card>
     </div>
   </div>
@@ -27,7 +26,7 @@ import {
   BaseHumidity
 } from "@/components/atoms";
 import { Card } from "@/components/molecules";
-import { mapActions } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Home",
@@ -54,6 +53,11 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    ...mapGetters({
+      weatherCitiesInfo: "weather/weatherCitiesInfo"
+    })
   },
   methods: {
     ...mapActions({

@@ -1,5 +1,5 @@
 export default {
-  SET(state, data) {
-    state.data = data;
+  SET_WEATHER(state, weatherList) {
+    state.weatherList = weatherList;
   }
 };
