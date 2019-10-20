@@ -33,7 +33,7 @@ A aplicação não faz uso de nenhum framework css, apenas do padrão de escrita
 ### Scss
 
 O [Sass](https://sass-lang.com/) foi escolhido como extensão do css em seu formato Scss.
-Todos os estilos foram criados em seus respectivos componentes como "scoped".
+Todos os estilos foram criados em seus respectivos componentes como "scoped".  
 O padrão de escrita escolhido foi o [BEM](http://getbem.com/introduction/).
 Ex:
 
@@ -55,6 +55,6 @@ A aplicação segue o padrão de [design atómico](http://atomicdesign.bradfrost
 
 ### Nomenclatura
 
-Nomes de componentes foram criados com `PascalCase`. Ex: `BaseLogo.vue`.
-Nomes de funções com `camelCase`. Ex: `getCitiesWeather()`.
-Attributos com `kebab-case`. Ex: `:has-error="hasError"`.
+Nomes de componentes foram criados com `PascalCase`. Ex: `BaseLogo.vue`.  
+Nomes de funções com `camelCase`. Ex: `getCitiesWeather()`.  
+Attributos com `kebab-case`. Ex: `:has-error="hasError"`.  
