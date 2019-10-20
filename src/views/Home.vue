@@ -26,8 +26,8 @@ import {
   BasePressure,
   BaseHumidity
 } from "@/components/atoms";
-
 import { Card } from "@/components/molecules";
+import { mapActions } from "vuex";
 
 export default {
   name: "Home",
@@ -36,6 +36,32 @@ export default {
     BasePressure,
     BaseHumidity,
     Card
+  },
+  data() {
+    return {
+      cities: [
+        {
+          id: 3421319,
+          name: "Nuuk"
+        },
+        {
+          id: 3445709,
+          name: "Urubici"
+        },
+        {
+          id: 184736,
+          name: "Nairobi"
+        }
+      ]
+    };
+  },
+  methods: {
+    ...mapActions({
+      fetchCitiesWeather: "weather/fetchCitiesWeather"
+    })
+  },
+  mounted() {
+    this.fetchCitiesWeather(this.cities);
   }
 };
 </script>
