@@ -5,7 +5,7 @@
         v-for="(city, i) in weatherCitiesInfo"
         :key="city.id"
         :title="`${city.name}, ${city.country}`"
-        bottomText="Updated at 02:48:27 PM"
+        :bottomText="`Updated at ${updatedTime}`"
       >
         <BaseTemperature :temperature="city.temp" />
         <template v-if="i === 1" slot="footer">
@@ -56,16 +56,18 @@ export default {
   },
   computed: {
     ...mapGetters({
-      weatherCitiesInfo: "weather/weatherCitiesInfo"
+      weatherCitiesInfo: "weather/weatherCitiesInfo",
+      updatedTime: "weather/updatedTime"
     })
   },
   methods: {
     ...mapActions({
-      fetchCitiesWeather: "weather/fetchCitiesWeather"
+      citiesWeather: "weather/citiesWeather"
     })
   },
   mounted() {
-    this.fetchCitiesWeather(this.cities);
+    const citiesIds = this.cities.map(city => city.id).join(",");
+    this.citiesWeather(citiesIds);
   }
 };
 </script>

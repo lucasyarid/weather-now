@@ -1,3 +1,4 @@
 export default {
-  weatherList: []
+  weatherList: [],
+  updatedTime: null
 };

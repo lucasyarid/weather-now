@@ -10,5 +10,8 @@ export default {
         country: city.sys.country
       };
     });
+  },
+  updatedTime(state) {
+    return state.updatedTime;
   }
 };
