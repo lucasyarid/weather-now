@@ -7,12 +7,15 @@
         :title="`${city.name}, ${city.country}`"
         :bottomText="`Updated at ${updatedTime}`"
       >
-        <BaseTemperature :temperature="city.temp" />
-        <template v-if="i === 1" slot="footer">
-          <div class="Home__cards-footer">
-            <BaseHumidity :humidity="city.humidity" />
-            <BasePressure :pressure="city.pressure" />
-          </div>
+        <BaseLoading v-if="isLoading" />
+        <template v-else>
+          <BaseTemperature :temperature="city.temp" />
+          <template v-if="i === 1" slot="footer">
+            <div class="Home__cards-footer">
+              <BaseHumidity :humidity="city.humidity" />
+              <BasePressure :pressure="city.pressure" />
+            </div>
+          </template>
         </template>
       </Card>
     </div>
@@ -23,7 +26,8 @@
 import {
   BaseTemperature,
   BasePressure,
-  BaseHumidity
+  BaseHumidity,
+  BaseLoading
 } from "@/components/atoms";
 import { Card } from "@/components/molecules";
 import { mapGetters, mapActions } from "vuex";
@@ -34,6 +38,7 @@ export default {
     BaseTemperature,
     BasePressure,
     BaseHumidity,
+    BaseLoading,
     Card
   },
   data() {
