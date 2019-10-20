@@ -14,6 +14,7 @@ export default {
       } else {
         const cachedWeather = JSON.parse(localStorage.getItem("weather"));
         dispatch("setWeather", cachedWeather);
+        dispatch("setUpdatedTime", cachedUpdatedAt);
       }
     } else {
       dispatch("fetchCitiesWeather", cities);
@@ -24,18 +25,16 @@ export default {
     if (!response.ok) return commit("SET_ERROR", true);
     const result = await response.json();
 
+    dispatch("setUpdatedTime", new Date());
     dispatch("setWeather", result.list);
   },
   setWeather({ commit, dispatch }, weatherList) {
     commit("SET_WEATHER", weatherList);
     dispatch("cacheWeather", weatherList);
-    dispatch("setUpdateTime");
     commit("SET_LOADING", false);
   },
-  setUpdateTime({ commit }) {
-    const date = new Date();
+  setUpdatedTime({ commit }, date) {
     const time = date.toLocaleTimeString("pt-BR");
-
     localStorage.setItem("updated_at", date);
     commit("SET_UPDATED_TIME", time);
   },
