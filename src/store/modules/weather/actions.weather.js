@@ -21,12 +21,15 @@ export default {
     }
   },
   async fetchCitiesWeather({ commit, dispatch }, citiesIds) {
-    const response = await fetch(`${weatherAPI}id=${citiesIds}`);
-    if (!response.ok) return commit("SET_ERROR", true);
-    const result = await response.json();
-
-    dispatch("setUpdatedTime", new Date());
-    dispatch("setWeather", result.list);
+    try {
+      const response = await fetch(`${weatherAPI}id=${citiesIds}`);
+      if (!response.ok) return commit("SET_ERROR", true);
+      const result = await response.json();
+      dispatch("setUpdatedTime", new Date());
+      dispatch("setWeather", result.list);
+    } catch (error) {
+      return commit("SET_ERROR", true);
+    }
   },
   setWeather({ commit, dispatch }, weatherList) {
     commit("SET_WEATHER", weatherList);

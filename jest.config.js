@@ -13,6 +13,9 @@ module.exports = {
   },
   testPathIgnorePatterns: ["<rootDir>/node_modules/"],
   collectCoverage: true,
-  collectCoverageFrom: ["<rootDir>/src/components/**/*.vue"],
+  collectCoverageFrom: [
+    "<rootDir>/src/components/**/*.vue",
+    "<rootDir>/src/store/**/*.*.js"
+  ],
   timers: "fake"
 };
